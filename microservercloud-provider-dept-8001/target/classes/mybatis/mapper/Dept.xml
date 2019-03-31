@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cib.springcloud.dao.DeptDao">
+    <resultMap type="com.cib.springcloud.entity.Dept" id="dept">
+    	<id property="deptno" column="deptno" />
+    	<result property="dname" column="dname"/>
+    	<result property="db_source" column="db_source"/>
+    </resultMap>
+    <select id="findById" parameterType="Long" 
+    resultMap="dept">
+    	select deptno,dname,db_source from dept where deptno = #{deptno}
+    </select>
+    <select id="findAll" resultMap="dept">
+    	select deptno,dname,db_source from dept where 1=1
+    </select>
+    <insert id="addDept" parameterType="com.cib.springcloud.entity.Dept" >
+    	insert into dept (dname,db_source) values(#{dname},database())
+    </insert>
+</mapper>
