@@ -1,0 +1,30 @@
+server:
+  port: 8001
+
+mybatis:
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+  
+spring:
+  application:
+   name: microservercloud-dept
+  datasource: 
+   driver-class-name: com.mysql.jdbc.Driver
+   url: jdbc:mysql://127.0.0.1:3306/test
+   username: lee
+   password: 123
+
+eureka:
+  client: 
+    service-url: 
+     # defaultZone: http://localhost:7001/eureka
+       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ 
+  instance:
+    instance-id:  microservercloud-dept8001-hystrix
+    prefer-ip-address: true
+
+
+
+info:
+  app.name: microservercloud-dept8001
+  company.name: com.cib

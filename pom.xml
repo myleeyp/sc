@@ -103,5 +103,6 @@
   	<module>microservercloud-provider-dept-8002</module>
   	<module>microservercloud-provider-dept-8003</module>
   	<module>microservercloud-consumer-dept-feign</module>
+  	<module>microservercloud-provider-dept-hystrix-8001</module>
   </modules>
 </project>

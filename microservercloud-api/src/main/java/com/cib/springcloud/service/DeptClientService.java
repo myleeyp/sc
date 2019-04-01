@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cib.springcloud.entity.Dept;
+import com.cib.springcloud.service.impl.DeptClientServiceFallback;
 
-@FeignClient(value="MICROSERVERCLOUD-DEPT")
+@FeignClient(value="MICROSERVERCLOUD-DEPT",fallbackFactory=DeptClientServiceFallback.class)
 public interface DeptClientService {
 	@RequestMapping(value="/dept/add")
 	public boolean add(Dept dept);

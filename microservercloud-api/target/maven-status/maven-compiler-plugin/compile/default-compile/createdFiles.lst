@@ -1,2 +1,4 @@
+com\cib\springcloud\service\impl\DeptClientServiceFallback.class
+com\cib\springcloud\service\impl\DeptClientServiceFallback$1.class
 com\cib\springcloud\entity\Dept.class
 com\cib\springcloud\service\DeptClientService.class
